@@ -1,8 +1,8 @@
 var webpack = require('webpack');
 
 let entry = {
-    "index.js" : [
-        "./src/Index.ts" , 
+    "index" : [
+        "./src/Index.tsx" , 
     ] , 
 }
 
