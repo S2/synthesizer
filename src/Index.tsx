@@ -3,6 +3,8 @@ import * as ReactDom from 'react-dom'
 import "Index.sass"
 import Volume from "Volume"
 import Oscillator from "Oscillator/Selector"
+import store from "Store/Volume"
+import { Provider } from 'react-redux'
 
 interface Props {
     
@@ -29,4 +31,4 @@ class Index extends React.Component<Props , State> {
     }
 }
 
-ReactDom.render(<Index />, document.getElementById("content"));
+ReactDom.render(<Provider store={store}><Index /></Provider> , document.getElementById("content"));
