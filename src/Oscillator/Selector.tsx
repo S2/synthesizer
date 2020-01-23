@@ -36,6 +36,7 @@ export default connect(mapStateToProps)(class extends React.Component<Props , St
     }
     
     render() {
+        store.subscribe(() => this.state.oscillator.getWave(store.getState()))
         return  <>
             {this.oscillators.map( oscillator => <Button onClick={() => this.setState({oscillator})} variant={this.state.oscillator === oscillator ? "" : "flat"} color="primary">{oscillator.name}</Button>)}
         </>

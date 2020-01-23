@@ -2,8 +2,7 @@ export default class {
     name = "SIN"
     constructor(){
     }
-    getWave(volume){
-        console.log("XXXXXXXXXXX")
+    getWave({volume , frequency}){
         const audioCtx = new window.AudioContext();
         
         const channels = 2
@@ -14,7 +13,7 @@ export default class {
         for (let channel = 0; channel < channels; channel++) {
             let nowBuffering = myArrayBuffer.getChannelData(channel);
             for (let i = 0; i < frameCount; i++) {
-                nowBuffering[i] += volume * 0.3 * Math.sin(440 * 2 * 1.5 * ( i / audioCtx.sampleRate ) * 2 * Math.PI)
+                nowBuffering[i] += volume * 0.3 * Math.sin(frequency * ( i / audioCtx.sampleRate ) * 2 * Math.PI)
             }
         }
 
