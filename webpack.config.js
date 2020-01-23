@@ -1,4 +1,5 @@
-var webpack = require('webpack');
+const webpack = require('webpack');
+const path = require('path');
 
 let entry = {
     "index" : [
@@ -24,7 +25,11 @@ module.exports = {
     },
 
     resolve: {
-        extensions: [".ts", ".tsx", ".js", ".json"]
+        extensions: [".ts", ".tsx", ".js", ".json"] , 
+        modules: [
+            path.resolve(__dirname , 'src')  , 
+            "node_modules" , 
+        ] 
     },
 
     module: {

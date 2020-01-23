@@ -1,6 +1,8 @@
 import * as React from 'react'
 import * as ReactDom from 'react-dom'
-import "./Index.sass"
+import "Index.sass"
+import Volume from "Volume"
+import Oscillator from "Oscillator/Selector"
 
 interface Props {
     
@@ -18,7 +20,12 @@ class Index extends React.Component<Props , State> {
     }
     
     render() {
-        return <></>
+        return <>
+            <h1>Volume</h1>
+            <Volume />
+            <h1>Oscillator</h1>
+            <Oscillator />
+        </>
     }
 }
 
