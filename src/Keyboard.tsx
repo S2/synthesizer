@@ -8,10 +8,13 @@ const mapDispatchToProps = dispatch => {
         setFrequency: (n) => {
             dispatch({ type:"SET_FREQUENCY" , frequency:n})
         },
+        keyUp: ()=>{
+            dispatch({ type:"KEY_UP"})
+        },
     }
 }
 
-const Key = connect(null , mapDispatchToProps)(({interval , setFrequency}) => {
+const Key = connect(null , mapDispatchToProps)(({interval , setFrequency , keyUp}) => {
     const notes = {
         0  : {name : "A"  , isBlack : false , rootFrequency : 27.5   , }  , 
         1  : {name : "A#" , isBlack : true  , rootFrequency : 29.135 , }  , 
@@ -30,8 +33,10 @@ const Key = connect(null , mapDispatchToProps)(({interval , setFrequency}) => {
     const octave = Math.floor(interval / 12)
     const frequency = note.rootFrequency * Math.pow(2 , (octave + 1))
 
-    return <div onClick={()=> {
+    return <div onMouseDown={()=> {
         setFrequency(frequency) 
+    }} onMouseUp={()=> {
+        keyUp() 
     }} className={`${note.isBlack ? "black" : ""}`}>
         {note.name}
     </div>
