@@ -6,6 +6,7 @@ import Oscillator from "Oscillator/Selector"
 import Keyboard from "Keyboard"
 import store from "Store/Volume"
 import { Provider } from 'react-redux'
+import ADSR from "ADSR"
 
 interface Props {
     
@@ -30,6 +31,8 @@ class Index extends React.Component<Props , State> {
             <Oscillator />
             <h1>Keyboard</h1>
             <Keyboard />
+            <h1>ADSR</h1>
+            <ADSR />
         </>
     }
 }
