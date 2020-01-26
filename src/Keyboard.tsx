@@ -35,6 +35,8 @@ const Key = connect(null , mapDispatchToProps)(({interval , setFrequency , keyUp
 
     return <div onMouseDown={()=> {
         setFrequency(frequency) 
+    }} onMouseOut={()=> {
+        keyUp() 
     }} onMouseUp={()=> {
         keyUp() 
     }} className={`${note.isBlack ? "black" : ""}`}>
