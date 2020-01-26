@@ -27,25 +27,25 @@ function counter(state = {
             state.attackGain = action.gain
             return state
         case 'SET_DECAY_GAIN':
-            state.attackGain = action.gain
+            state.decayGain = action.gain
             return state
         case 'SET_SUSTAIN_GAIN':
-            state.attackGain = action.gain
+            state.sustainGain = action.gain
             return state
         case 'SET_RELEASE_GAIN':
-            state.attackGain = action.gain
+            state.releaseGain = action.gain
             return state
         case 'SET_ATTACK_TIME':
             state.attackTime = action.time
             return state
         case 'SET_DECAY_TIME':
-            state.attackTime = action.time
+            state.decayTime = action.time
             return state
         case 'SET_SUSTAIN_TIME':
-            state.attackTime = action.time
+            state.sustainTime = action.time
             return state
         case 'SET_RELEASE_TIME':
-            state.attackTime = action.time
+            state.releaseTime = action.time
             return state
         default:
             return state
